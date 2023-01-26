@@ -30,7 +30,7 @@ function bet() {
     <BetButtons/>
     <div className='selectedBettingAmount'></div>
     <div className='selectedBettingNumber'></div>
-    <button onClick={() => placeBet()} className="bg-purple-200 rounded-full h-[100px] w-[100px] text-white font-bold py-2 px-4"></button>
+    <button onClick={() => placeBet()} className="bg-purple-200 rounded-full h-[100px] w-[100px] text-black font-bold py-2 px-4">place bets</button>
     </main>
   )
 }
