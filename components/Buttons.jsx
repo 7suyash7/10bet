@@ -69,7 +69,8 @@ const MyButtons = () => {
                  12
             </button>
         </div>
-        <div id="bettingNumber" value=""></div>
+        <div id="bettingNumber" className='display-none' value=""></div> {/* We use the bettingNumber div to store value of the bettingNumber selected by the user */}
+
     </div>
   );
 }

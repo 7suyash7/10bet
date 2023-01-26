@@ -20,7 +20,7 @@ function CountdownTimer() {
   const remainingSeconds = seconds % 60;
 
   return (
-    <div className='text-green-200 text-[20px] mt-[10px] font-mono'>
+    <div id='countDownTime' className='text-green-200 text-[20px] mt-[10px] font-mono'>
       {minutes}:{remainingSeconds < 10 ? '0' : ''}{remainingSeconds}
     </div>
   );

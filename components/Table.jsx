@@ -1,4 +1,6 @@
-import { Fragment } from 'react';
+import React, { Fragment, useEffect, useState }from 'react';
+import Header from './Header';
+import AdminButton from './AdminButton';
 
 const MyTable = () => {
   return (
@@ -16,8 +18,8 @@ const MyTable = () => {
             <td className="border px-4 py-2 bg-red-600">Result</td>
           </tr>
           <tr className='text-white bg-amber-600'>
-            <td className="border px-4 py-2">6:30PM</td>
-            <td className="border px-4 py-2">5</td>
+            <td id='resultTime' className="border px-4 py-2">6:30PM</td>
+            <td id='resultValue' className="border px-4 py-2">5</td>
           </tr>
           <tr className='text-white bg-green-600'>
             <td className="border px-4 py-2">6:50PM</td>

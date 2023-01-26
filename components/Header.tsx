@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import CountdownTimer from './CountDownTimer';
 import MyTable from './Table';
+import AdminButton from './AdminButton';
 
 function Header() {
 
@@ -29,7 +30,7 @@ function Header() {
     <div className='flex'>
       <h1 className='text-[30px] pl-[30px] text-white'>Balance: {/*Moneyhere*/}</h1>
 
-      <h1 className='text-white text-[30px] pl-[250px] font-mono'>Draw:{time}</h1>
+      <h1 id="currentTime" className='text-white text-[30px] pl-[250px] font-mono'>{time}</h1>
       <div className='pl-[40px]'>
       <CountdownTimer/>
       </div>

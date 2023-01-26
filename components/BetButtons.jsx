@@ -28,7 +28,7 @@ function btnClick(id) {
         <button  onClick={() => btnClick('#betAmt6')} id="betAmt6" className="bg-gray-100 ml-[60px]  rounded-full h-[70px] w-[70px] text-black font-bold py-2 px-4">
              500
         </button>
-        <h3 id='bettingAmount' className='display-none' value=""></h3>
+        <div id='bettingAmount' className='display-none' value=""></div> {/* We use the bettingNumber div to store value of the bettingNumber selected by the user */}
 
     </div>
   )
