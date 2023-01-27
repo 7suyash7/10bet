@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import CountdownTimer from './CountDownTimer';
-import MyTable from './Table';
 import AdminButton from './AdminButton';
 
 function Header() {
