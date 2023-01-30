@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
 function CountdownTimer() {
-  const [seconds, setSeconds] = useState(185);
+  const [seconds, setSeconds] = useState(10);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setSeconds((prevSeconds) => {
         if (prevSeconds === 0) {
-          return 185; // reset to 3 minutes and 5 seconds
+          return 10; // reset to 3 minutes and 5 seconds
         } else {
           return prevSeconds - 1;
         }

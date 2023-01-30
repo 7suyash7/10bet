@@ -1,83 +1,62 @@
-// import connect from "../../lib/mongodb";
-// import User from '../../models/schema';
-// const express = require('express')
-// const app = express()
-// connect()
+// import User from "../../models/schema";
 
-// export default async function handler(req,res){
+// async function login(userId, password) {
+//     const user = await User.findOne({ userId });
 
-//     const {email,password}=req.body
-//     const user = await User.findOne({email,password})
-//     if(!user){
-//         return res.json({status:'Not able to find the user'})
+//     if (!user) {
+//         return { error: 'User not found' };
 //     }
-//     else{
-//         res.redirect('/bet');
+
+//     if (user.password !== password) {
+//         return { error: 'Incorrect password' };
 //     }
+
+//     return { role: user.role };
 // }
 
-// // app.post('/login', function(req, res) {
-// //     // Find the user in the database
-// //     User.findOne({username: req.body.username}, function(err, user) {
-// //       if (err) {
-// //         // Handle error
-// //       }
-// //       if (!user) {
-// //         // Handle invalid username or password
-// //       }
-// //       if (user.password === req.body.password) {
-// //         if (user.role === 'admin') {
-// //           res.redirect('/admin');
-// //         } else {
-// //           res.redirect('/bet');
-// //         }
-// //       } else {
-// //         // Handle invalid username or password
-// //       }
-// //     });
-// //   });
+// import React, { useState } from 'react';
+// // import { login } from 'path/to/login';
 
-import React, { useState } from 'react';
-import axios from 'axios';
+// const LoginPage = () => {
+//     const [userId, setUserId] = useState('');
+//     const [password, setPassword] = useState('');
+//     const [error, setError] = useState(null);
 
-const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
+//     const handleSubmit = async (e) => {
+//         e.preventDefault();
+//         const result = await login(userId, password);
+//         if (result.error) {
+//             setError(result.error);
+//         } else {
+//             console.log('Role: ', result.role);
+//         }
+//     };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const response = await axios.post('/api/login', { username, password });
-      const { role } = response.data;
-      if (role === 'admin') {
-        // Redirect to admin page
-        window.location.href = '/admin';
-      } else {
-        // Redirect to bets page
-        window.location.href = '/bets';
-      }
-    } catch (err) {
-      setError(err.response.data.message);
-    }
-  }
+//     return (
+//         <form onSubmit={handleSubmit}>
+//             <div>
+//                 <label htmlFor="userId">User ID:</label>
+//                 <input
+//                     type="text"
+//                     id="userId"
+//                     value={userId}
+//                     onChange={(e) => setUserId(e.target.value)}
+//                 />
+//             </div>
+//             <div>
+//                 <label htmlFor="password">Password:</label>
+//                 <input
+//                     type="password"
+//                     id="password"
+//                     value={password}
+//                     onChange={(e) => setPassword(e.target.value)}
+//                 />
+//             </div>
+//             {error && <div>{error}</div>}
+//             <button type="submit">Login</button>
+//         </form>
+//     );
+// };
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </label>
-      <br />
-      <button type="submit">Login</button>
-      {error && <div>{error}</div>}
-    </form>
-  );
-};
+// export default LoginPage;
 
-export default Login;
